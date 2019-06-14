@@ -1,0 +1,25 @@
+.signup-form {
+  margin: $spacing-md auto $spacing-xxl auto;
+  width: 100%;
+  max-width: 550px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  label {
+    text-transform: uppercase;
+  }
+  input {
+    width: 100%;
+  }
+  .form-warning {
+    font-size: 12px;
+    text-align: center;
+    color: $gray-60;
+  }
+  .full-name {
+    display: flex;
+    justify-content: space-between;
+  }
+}
