@@ -14,7 +14,7 @@ class Signup extends React.Component {
             <input name='lastName' type='text' placeholder='Hamilton'/>
           </div>
         </div>
-        <p className='form-warning'>The following information needs to be real for your payment to be processed.</p>
+        <p className='description'>The following information needs to be real for your payment to be processed.</p>
         <div className="email-input">
           <label htmlFor="email">Email</label>
           <input name='email' type='text' placeholder='margaret@nasa.gov'/>
