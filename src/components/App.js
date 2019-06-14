@@ -1,12 +1,11 @@
 import React from 'react';
-import './css/styles.scss';
+import Header from './Header';
+import '../css/styles.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>99 Cent App</h1>
-      </header>
+      <Header></Header>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+header {
+  margin: 0;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $white;
+  background: $gray-90;
+  // add support for 2x retina images later
+  background-image: url('../assets/images/who-paid-hero.png');
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    max-width: 500px;
+  }
+}
