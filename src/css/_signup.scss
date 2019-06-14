@@ -1,5 +1,5 @@
 .signup-form {
-  margin: $spacing-md auto $spacing-xxl auto;
+  margin: $spacing-xl auto $spacing-xl auto;
   width: 100%;
   max-width: 550px;
   height: 450px;
@@ -12,11 +12,15 @@
   }
   input {
     width: 100%;
-  }
-  .form-warning {
-    font-size: 12px;
-    text-align: center;
-    color: $gray-60;
+    &[disabled] {
+      background-color: $gray-10;
+    }
+    &[name='payment'] {
+      background-image: url('../assets/images/icons/visa-icon.svg');
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      padding-left: 55px;
+    }
   }
   .full-name {
     display: flex;
