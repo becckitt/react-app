@@ -8,6 +8,7 @@ header {
   align-items: center;
   flex-direction: column;
   color: $white;
+  position: relative;
   background: $gray-90;
   // add support for 2x retina images later
   background-image: url('../assets/images/who-paid-hero.png');
