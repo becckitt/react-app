@@ -1,0 +1,16 @@
+.members-list {
+  max-width: 500px;
+  margin: 0 auto;
+  ul {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: $spacing-md;
+  }
+  li {
+    list-style: none;
+  }
+}
