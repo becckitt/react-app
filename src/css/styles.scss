@@ -5,11 +5,11 @@
 @import 'colors';
 @import 'spacing';
 @import 'fonts';
-@import 'header';
-@import 'signup';
-@import 'footer';
-@import 'success-banner';
-@import 'members-list';
+@import './components/header';
+@import './components/signup';
+@import './components/footer';
+@import './components/success-banner';
+@import './components/members-list';
 html,
 body {
   height: 100%;
