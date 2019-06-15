@@ -6,12 +6,12 @@ class Signup extends React.Component {
       <form action='' className='signup-form'>
         <div className='full-name'>
           <div className='first-name'>
-            <label htmlFor='firstName'>First name</label>
-            <input name='firstName' type='text' placeholder='Margaret'/>
+            <label htmlFor='firstName' className='required'>First name</label>
+            <input required name='firstName' type='text' placeholder='Margaret'/>
           </div>
           <div className='last-name'>
-            <label htmlFor='lastName'>Last name</label>
-            <input name='lastName' type='text' placeholder='Hamilton'/>
+            <label htmlFor='lastName' className='required'>Last name</label>
+            <input required name='lastName' type='text' placeholder='Hamilton'/>
           </div>
         </div>
         <p className='description'>The following information needs to be real for your payment to be processed.</p>

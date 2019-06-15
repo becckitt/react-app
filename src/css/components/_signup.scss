@@ -9,6 +9,19 @@
 
   label {
     text-transform: uppercase;
+    position: relative;
+    &.required::before {
+      position: absolute;
+      content: 'Required';
+      font-size: .7rem;
+      line-height: 1.5rem;
+      height: 15px;
+      width: 70px;
+      margin-left: 60px;
+      text-align: right;
+      text-transform: capitalize;
+      color: $gray-30;
+    }
   }
   input {
     width: 100%;
