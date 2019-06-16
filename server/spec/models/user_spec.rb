@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     before(:all) do
       @user = create(:user)
     end
+
     it "is valid with valid attributes" do
       expect(@user).to be_valid
     end
@@ -26,6 +27,20 @@ RSpec.describe User, type: :model do
     it "is invalid without a first and last name" do
       user_with_missing_names = User.new(first_name: nil, last_name: nil, email: "e@mail.com")
       expect(user_with_missing_names).to_not be_valid
+    end
+
+    it "can return a serialized response for users" do
+      create :user, first_name: 'another', last_name: 'name', email: 'great@email.com'
+      expect(User.serialized_users).to eq([
+        {:email=>"email@gmail.com",
+        :first_name=>"firstName",
+        :last_name=>"lastName",
+        :payment=>"xxxx xxxx xxxx 4242"},
+        {:email=>"great@email.com",
+        :first_name=>"another",
+        :last_name=>"name",
+        :payment=>"xxxx xxxx xxxx 4242"}
+      ])
     end
   end
 end
