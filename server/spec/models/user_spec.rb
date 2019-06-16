@@ -2,18 +2,18 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "user model attributes" do
-    user = User.new(first_name: "first", last_name: "last", email: "email@gmail.com")
-
+    before(:all) do
+      @user = create(:user)
+    end
     it "is valid with valid attributes" do
-      expect(user).to be_valid
+      expect(@user).to be_valid
     end
 
     it "has a default payment value" do
-      expect(user.payment).to eq('xxxx xxxx xxxx 4242')
+      expect(@user.payment).to eq('xxxx xxxx xxxx 4242')
     end
 
     it "is invalid with a non-unique email" do
-      test_user = User.create!(first_name: "name1", last_name: "name2", email: "email@gmail.com")
       user_with_duplicate_email = User.new(first_name: "name1", last_name: "name2", email: "email@gmail.com")
       expect(user_with_duplicate_email).to_not be_valid
     end
