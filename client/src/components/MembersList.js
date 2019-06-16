@@ -1,27 +1,31 @@
 import React from 'react';
 
 class MembersList extends React.Component {
-  members = [
-    'Annie Easley',
-    'Ada Lovelace',
-    'Adele Mildred Koss',
-    'Margaret Hamilton',
-    'Grace Hopper',
-    'Anna Winlock',
-    'Annie Jump Cannon',
-    'Mary Clem',
-    'Clara Froelich',
-    'Mary K. Hawes',
-    'Kathryn Peddrew',
-    'Katherine Johnson'
-  ];
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      members: []
+    }
+  }
+
+  componentDidMount() {
+    this.MemberList();
+  }
+
+  MemberList() {
+    fetch('/api/users')
+      .then(response => response.json())
+      .then(data => this.setState({ members: data || [] }));
+  }
+
   render() {
     return (
       <div className='members-list'>
         <h2>Members</h2>
         <ul>
-          {this.members.map(member => (
-            <li>{member}</li>
+          {this.state.members.map(member => (
+            <li key={member.id}>{member.name}</li>
           )) }
         </ul>
       </div>
