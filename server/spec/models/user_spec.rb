@@ -32,14 +32,8 @@ RSpec.describe User, type: :model do
     it "can return a serialized response for users" do
       create :user, first_name: 'another', last_name: 'name', email: 'great@email.com'
       expect(User.serialized_users).to eq([
-        {:email=>"email@gmail.com",
-        :first_name=>"firstName",
-        :last_name=>"lastName",
-        :payment=>"xxxx xxxx xxxx 4242"},
-        {:email=>"great@email.com",
-        :first_name=>"another",
-        :last_name=>"name",
-        :payment=>"xxxx xxxx xxxx 4242"}
+        {:id=>1, :name=>"firstName lastName"},
+        {:id=>2, :name=>"another name"}
       ])
     end
   end
