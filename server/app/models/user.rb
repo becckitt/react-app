@@ -5,11 +5,13 @@ class User < ApplicationRecord
   def self.serialized_users
     self.all.map do |user|
       {
-        first_name: user.first_name,
-        last_name:  user.last_name,
-        email:      user.email,
-        payment:    user.payment
+        id:         user.id,
+        name:       user.full_name,
       }
     end
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end
