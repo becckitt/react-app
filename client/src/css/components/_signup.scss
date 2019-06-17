@@ -1,0 +1,42 @@
+.signup-form {
+  margin: $spacing-xl auto $spacing-xl auto;
+  width: 100%;
+  max-width: 550px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  label {
+    text-transform: uppercase;
+    position: relative;
+    &.required::before {
+      position: absolute;
+      content: 'Required';
+      font-size: .7rem;
+      line-height: 1.5rem;
+      height: 15px;
+      width: 70px;
+      margin-left: 60px;
+      text-align: right;
+      text-transform: capitalize;
+      color: $gray-30;
+    }
+  }
+  input {
+    width: 100%;
+    &[disabled] {
+      background-color: $gray-10;
+    }
+    &[name='payment'] {
+      background-image: url('../assets/images/icons/visa-icon.svg');
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      padding-left: 55px;
+    }
+  }
+  .full-name {
+    display: flex;
+    justify-content: space-between;
+  }
+}
