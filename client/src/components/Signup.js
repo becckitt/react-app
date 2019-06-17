@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class Signup extends React.Component {
       firstName: '',
       lastName: '',
       email: '',
-      payment: ''
+      payment: '',
+      redirectToMembers: false
     }
 
     this.createUser = this.createUser.bind(this);
@@ -24,9 +26,16 @@ class Signup extends React.Component {
         last_name: this.state.lastName,
         email: this.state.email
       })
+    }).then(response => {
+      this.setState({ redirectToMembers: true });
+    }).catch(error => {
+      console.log("couldnt create user: ", error);
     });
   }
   render() {
+    if (this.state.redirectToMembers) {
+      return <Redirect to='/members' />
+    }
     return (
       <form className='signup-form' onSubmit={this.createUser}>
         <div className='full-name'>
