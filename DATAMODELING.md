@@ -10,7 +10,7 @@
 - jwt?
 
 ## Analytics
-- 
+- Google analytics
 
 ## Referrals
 - Referrer (ie Twitter, FB)
