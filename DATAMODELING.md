@@ -5,16 +5,19 @@
 - Last name (Required), string
 - Email address, string (it looks like from the mocks users are typically found by their full name; in the real world i would wonder if we want to enforce email uniqueness and index on emails for faster lookup, since names are not guaranteed to be unique)
 - Payment (in a production world, this would probably be outsourced, and stored securely), string
-- Referrals: Can 'have many'. # will determine platinum or gold status
+- Referrals: # will determine platinum or gold status
   - Status related to referral #
-- jwt?
+- JWT/Authentication: Not going to be able to implement in time for this, but with more time I'd add in more auth to the endpoints, likely using JWT.
 
 ## Analytics
 - Google analytics
 
 ## Referrals
 - Referrer (ie Twitter, FB)
-- 
+- Research for links: [Glossier referral links](https://www.glossier.com/account/referral), [Reddit Skincare referral code threads](https://www.reddit.com/r/SkincareAddiction/search/?q=referral%20code%20thread&restrict_sr=1)
+- Thought process 1: Generate a link, and append `referrer=user_id`. When a user visits the site given a link, check the referrer id, find the associated user, and increment their referral number. (flaw: no referral model means there's no good place for the concept of a referral status [ie platinum, gold] to live. also, no good way to track who got referred if we want that)
+- Thought process 2: Let's go ahead and give this a model. Would need to add a column to User to store a generated unique referral code (maybe a hashed version of their name or id). Would need a Referral table, which would have a foreign key to the referring  user, and a foreign key to the referred user, as well as a column for source to determine where the referral came from. Upon successful signup through the form, a referral would be generated in the api call to create the new user. Referral count would be determined by the count of referrals that belong_to a user, and the model would be able to determine referral level based on count. 
+  - Conditions to guard against: User can't refer themselves (referrer and referred cant be the same), referral code must be valid
 
 ------------
 ## Endpoints
