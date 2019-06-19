@@ -7,4 +7,11 @@ RSpec.describe Api::UsersController, type: :controller do
       expect(response).to be_success
     end
   end
+
+  describe "POST /api/user" do
+    it "should create a new user successfully" do
+      post :create, :params => { :user => {first_name: "Great", last_name: "User", email: "greatuser@gmail.com"}}
+      expect(response).to be_success
+    end
+  end
 end

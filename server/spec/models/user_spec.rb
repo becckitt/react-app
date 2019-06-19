@@ -37,12 +37,8 @@ RSpec.describe User, type: :model do
       ])
     end
 
-    it "has a referral code" do
-      expect(@user.referral_code).to eq('12346')
-    end
-
     it "has a referral link" do
-      expect(@user.referral_link).to eq('http://localhost:3001/x/12346')
+      expect(@user.referral_link).to eq("http://localhost:3001/x/#{@user.referral_code}")
     end
   end
 end
