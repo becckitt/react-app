@@ -7,9 +7,10 @@ class Api::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render json: { status: 'SUCCESS', message: 'User saved', data: user }
+      generate_referral(params[:referral_code], user.id) if params[:referral_code]
+      render json: { status: 'SUCCESS' }
     else
-      render json: { status: 'ERROR', message: 'user not saved'}
+      render json: { status: 'ERROR' }
     end
   end
 
@@ -17,5 +18,12 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :payment)
+  end
+
+  def generate_referral(code, referred_id)
+    referrer = User.find_by(referral_code: code)
+    if referrer
+      Referral.create(referrer_id: referrer.id, referred_id: referred_id)
+    end
   end
 end
