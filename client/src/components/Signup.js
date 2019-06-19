@@ -75,7 +75,7 @@ class Signup extends React.Component {
           <label htmlFor='payment'>Saved payment</label>
           <input name='payment' type='text' placeholder='xxxx xxxx xxxx 4242' disabled/>
         </div>
-        <button type='submit'>See who paid 99&#162;</button>
+        <button className='submit' type='submit'>See who paid 99&#162;</button>
       </form>
     )
   }

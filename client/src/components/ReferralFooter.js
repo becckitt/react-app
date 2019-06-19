@@ -1,11 +1,20 @@
 import React from 'react';
 
-// Copy the regular footer for now as a mock,
-// fill in with referral markup later
 const ReferralFooter = () => (
-  <footer>
-    <p className='description'>Your name will be public. Obviously. That's the point. Just use a fake one if you want. Your receipt will be emailed to you.</p>
-    <p className='legal-text'>All sales are final. Please don't sue us. No copyright intended. All of this is 100% legal advice.</p>
+  <footer className='referral-footer'>
+    <div className='inner-footer'>
+      <h3>Referrals</h3>
+      <p className='description'>Earn gold or platinum status when you refer your friends to join the club.</p>
+      <div className='card'>
+        <div className='inner-card'>
+          <p className='share-text'>I just found out who paid 99&#162;. You could too! <span className='hashtag'>#SeeWhoPaid</span></p>
+        </div>
+        <div className='share-section'>
+          <button className='social facebook'>Share on Facebook</button>
+          <button className='social twitter'>Share on Twitter</button>
+        </div>
+      </div>
+    </div>
   </footer>
 );
 

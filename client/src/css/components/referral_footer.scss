@@ -1,0 +1,49 @@
+.referral-footer {
+  padding: $spacing-md 0;
+  height: 300px;
+}
+
+.inner-footer {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+
+  p {
+    text-align: left;
+  }
+
+  .card {
+    background: $white;
+    border-radius: 10px;
+    border: 1px $gray-20 solid;
+    width: 600px;
+  }
+
+  .share-text {
+    font-size: 16px;
+    margin: $spacing-md 0;
+    padding: $spacing-md;
+    border-bottom: 1px $gray-20 solid;
+
+    .hashtag {
+      color: $gray-30;
+    }
+  }
+
+  .share-section {
+    padding: 0 $spacing-md $spacing-md $spacing-md;
+
+  }
+
+  button.social {
+    background: transparent;
+    font-size: 13px;
+
+    &.facebook {
+      color: #3b5998;
+    }
+    &.twitter {
+      color: #1da1f2;
+    }
+  }
+}

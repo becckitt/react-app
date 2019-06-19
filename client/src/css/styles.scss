@@ -10,6 +10,7 @@
 @import './components/footer';
 @import './components/success-banner';
 @import './components/members-list';
+@import './components/referral_footer.scss';
 html,
 body {
   height: 100%;
@@ -41,13 +42,17 @@ input {
 }
 
 button {
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+button.submit {
   background: $blue;
   color: $white;
-  font-weight: bold;
   padding: $spacing-sm;
   border-radius: 40px;
   margin-top: $spacing-md;
-  border: none;
   &:disabled,
   &[disabled] {
     background: $gray-10;
