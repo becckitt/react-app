@@ -6,8 +6,8 @@ import Members from './Members';
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={App} />
-      <Route exact path="/members" component={Members} />
+      <Route exact path='/' component={App} />
+      <Route exact path='/members' component={Members} />
     </Switch>
   </BrowserRouter>
 )
