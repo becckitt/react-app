@@ -38,4 +38,8 @@
 ## State to keep track of
 - Need to know current user, so we can add 'That's you!' next to their name, put current user at top of members list
 
+# Given more time I would...
+- Clean up the state in React. This was my first time building a React app outside of tutorials, and while it went fine, I'm sure there is some cleanup specifically around state management to do. Redux feels a little intense for such a small app, but it's something I considered.
+- Referral system: As nice as our sample share text is, I am sure users would love to be able to edit it. I would change the referral system to a form, and change the text to input. I would also hook up the submit buttons to actual social implementations, so you could tweet it out. Finally, I would add the current user into state 
+- Tests! I would add more tests. Particularly on the frontend.
 
