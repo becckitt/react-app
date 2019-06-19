@@ -5,7 +5,7 @@ const ReferralFooter = () => (
     <div className='inner-footer'>
       <h3>Referrals</h3>
       <p className='description'>Earn gold or platinum status when you refer your friends to join the club.</p>
-      <div className='card'>
+      <div className='social-card'>
         <div className='inner-card'>
           <p className='share-text'>I just found out who paid 99&#162;. You could too! <span className='hashtag'>#SeeWhoPaid</span></p>
         </div>

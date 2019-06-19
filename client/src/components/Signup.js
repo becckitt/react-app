@@ -1,7 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router';
 
 class Signup extends React.Component {
+  static propTypes = {
+    referralCode: PropTypes.string
+  }
   constructor(props) {
     super(props);
 
@@ -18,13 +22,15 @@ class Signup extends React.Component {
 
   createUser = event => {
     event.preventDefault();
+    const { referralCode } = this.props;
     fetch('/api/user', {
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
         first_name: this.state.firstName,
         last_name: this.state.lastName,
-        email: this.state.email
+        email: this.state.email,
+        referral_code: referralCode
       })
     }).then(response => {
       this.setState({ redirectToMembers: true });
@@ -37,7 +43,7 @@ class Signup extends React.Component {
       return <Redirect to='/members' />
     }
     return (
-      <form className='signup-form' onSubmit={this.createUser}>
+      <form className='signup-form' id='signup' onSubmit={this.createUser}>
         <div className='full-name'>
           <div className='first-name'>
             <label htmlFor='firstName' className='required'>First name</label>
