@@ -8,6 +8,7 @@ _given more time... I would love to add a dockerfile so it would just be one set
 This app is split into two parts: frontend app, and backend api. The former is in the client/ folder, with the latter being in the server/folder.
 - API: From the main directory, cd into /server. Run `bundle install`, then `rails db:migrate`. **To get a prefilled database: also run `rails db:seed`** Start the server with `rails s` / `rails server`. (You will need Rails 5 installed locally.) The app will be running locally on port 3000. 
 - Frontend: cd into /client. Run `yarn install`, then run `npm start`. The app will start running on port 3001.
+- To generate a referral (only available on the backend): A lot of this will be in `rails c`, but you can get the first user's `referral_link`, visit it in the browser, sign up with that link, and observe that a new referral exists in the DB.
 
 ## Testing
 - API: In the /server folder, run `bundle exec rake`. The testing suite runs on rspec and uses FactoryBot for fixtures.
