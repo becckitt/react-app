@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
 
   def generate_referral(code, referred_id)
     referrer = User.find_by(referral_code: code)
-    if referrer
+    if referrer && referrer.id != referred_id
       Referral.create(referrer_id: referrer.id, referred_id: referred_id)
     end
   end
